@@ -22,25 +22,28 @@ public class PlayMovement : MonoBehaviour {
     }
 	
 	void Update () {
-        if (avatar) {
-            float back = 1f;
+        if (!avatar) {
+            return;
+        }
 
-            if (v < 0f) back = -1f;
+        float back = 1f;
 
-            avatar.SetFloat("Speed", (h * h + h * v));
+        if (v < 0f) back = -1f;
 
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
-            if (rigidbody) {
-                Vector3 speed = rigidbody.velocity;
-                speed.x = 4 * h;
-                speed.y = 4 * v;
+        avatar.SetFloat("Speed", (h * h + h * v));
 
-                rigidbody.velocity = speed;
-                if(h!=0f && v != 0f) {
-                    transform.rotation = Quaternion.LookRotation(new Vector3(h, 0f, v));
-                }
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        if (rigidbody) {
+            Vector3 speed = rigidbody.velocity;
+            speed.x = 4 * h;
+            speed.y = 4 * v;
+
+            rigidbody.velocity = speed;
+            if(h!=0f && v != 0f) {
+                transform.rotation = Quaternion.LookRotation(new Vector3(h, 0f, v));
             }
         }
+        
 	}
 
     public void OnAttackDown() {
@@ -64,4 +67,12 @@ public class PlayMovement : MonoBehaviour {
         }
     }
 
+    public void OnSkillDown() {
+        if (Time.time - lastSkillTime <= 1f) {
+            return;
+        }
+
+        avatar.SetBool("Skill", true);
+        lastSkillTime = Time.time;
+    }
 }
