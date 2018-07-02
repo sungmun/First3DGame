@@ -11,17 +11,17 @@ public class PlayMovement : MonoBehaviour {
     public bool dashing = false;
 
     float h, v;
-	
-	void Start () {
-        avatar = GetComponent<Animator>();
-	}
 
-    public void OnStickChanged(Vector2 stickPos){
+    void Start() {
+        avatar = GetComponent<Animator>();
+    }
+
+    public void OnStickChanged(Vector2 stickPos) {
         h = stickPos.x;
         v = stickPos.y;
     }
-	
-	void Update () {
+
+    void Update() {
         if (!avatar) {
             return;
         }
@@ -39,12 +39,12 @@ public class PlayMovement : MonoBehaviour {
             speed.y = 4 * v;
 
             rigidbody.velocity = speed;
-            if(h!=0f && v != 0f) {
+            if (h != 0f && v != 0f) {
                 transform.rotation = Quaternion.LookRotation(new Vector3(h, 0f, v));
             }
         }
-        
-	}
+
+    }
 
     public void OnAttackDown() {
         attacking = true;
@@ -78,5 +78,15 @@ public class PlayMovement : MonoBehaviour {
 
     public void OnSkillUp() {
         avatar.SetBool("Skill", false);
+    }
+
+    public void OnDashDown() {
+        if (Time.time - lastDashTime <= 1f) {
+            return;
+        }
+
+        lastDashTime = Time.time;
+        dashing = true;
+        avatar.SetTrigger("Dash");
     }
 }
