@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayMovement : MonoBehaviour {
 
+    protected Animation avatar;
+
+    float lastAttackTime, lastSkillTime, lastDashTime;
+    public bool attacking = false;
+    public bool dashing = false;
+
 	// Use this for initialization
 	void Start () {
 		
