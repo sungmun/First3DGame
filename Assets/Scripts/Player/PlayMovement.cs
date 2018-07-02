@@ -43,4 +43,10 @@ public class PlayMovement : MonoBehaviour {
         }
 	}
 
+    public void OnAttackdown() {
+        attacking = true;
+        avatar.SetBool("Combo", true);
+        StartCoroutine(StartAttack());
+    }
+
 }
