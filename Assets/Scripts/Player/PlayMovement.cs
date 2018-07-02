@@ -75,4 +75,8 @@ public class PlayMovement : MonoBehaviour {
         avatar.SetBool("Skill", true);
         lastSkillTime = Time.time;
     }
+
+    public void OnSkillUp() {
+        avatar.SetBool("Skill", false);
+    }
 }
