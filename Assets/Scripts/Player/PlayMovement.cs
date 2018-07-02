@@ -49,4 +49,14 @@ public class PlayMovement : MonoBehaviour {
         StartCoroutine(StartAttack());
     }
 
+    IEnumerator StartAttack() {
+        if (Time.time - lastAttackTime > 1f) {
+            lastAttackTime = Time.time;
+            while (attacking) {
+                avatar.SetTrigger("AttackStart");
+                yield return new WaitForSeconds(1f);
+            }
+        }
+    }
+
 }
