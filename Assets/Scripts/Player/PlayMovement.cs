@@ -12,7 +12,7 @@ public class PlayMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        avatar = GetComponent<Animation>();
 	}
 	
 	// Update is called once per frame
