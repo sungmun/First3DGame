@@ -89,4 +89,8 @@ public class PlayMovement : MonoBehaviour {
         dashing = true;
         avatar.SetTrigger("Dash");
     }
+
+    public void OnDashUp() {
+        dashing = false;
+    }
 }
