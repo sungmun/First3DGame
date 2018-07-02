@@ -40,7 +40,10 @@ ExportedObj/
  
 *.booproj
  
- 
+
+*.lock
+
+
  
 # ============ #
  
