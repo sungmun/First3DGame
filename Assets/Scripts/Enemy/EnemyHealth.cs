@@ -58,7 +58,18 @@ public class EnemyHealth : MonoBehaviour {
             Debug.Log(e.ToString());
         }
     }
+
     void Update () {
-		
+	    if(damaged) {
+            transform.GetChild(0).GetComponent<Renderer>().material.SetColor("_OutlineColor", flashColor);
+        } else {
+            transform.GetChild(0).GetComponent<Renderer>().material.SetColor("_OutlineColor", Color.Lerp(transform.GetChild(0).GetComponent<Renderer>().material.GetColor("_OutlineColor"), Color.black, flashSpeed * Time.deltaTime));
+        }
+
+        damaged = false;
+
+        if (isSinking) {
+            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+        }
 	}
 }
