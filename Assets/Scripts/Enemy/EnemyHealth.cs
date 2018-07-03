@@ -20,8 +20,14 @@ public class EnemyHealth : MonoBehaviour {
     private void Awake() {
         currentHealth = startingHealth;
     }
-   
-	public void StartSinking() {
+    void Death() {
+        isDead = true;
+
+        transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
+
+        StartSinking();
+    }
+    public void StartSinking() {
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
