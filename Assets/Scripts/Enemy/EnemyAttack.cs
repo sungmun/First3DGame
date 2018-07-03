@@ -25,6 +25,11 @@ public class EnemyAttack : MonoBehaviour {
             playerInRange = true;
         }
     }
+    private void OnTriggerExit(Collider other) {
+        if (other.gameObject == player) {
+            playerInRange = false;
+        }
+    }
     void Update () {
 		
 	}
