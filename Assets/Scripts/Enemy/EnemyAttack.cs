@@ -13,12 +13,14 @@ public class EnemyAttack : MonoBehaviour {
 
     bool playerInRange;
     float timer;
-	
-	void Start () {
-		
-	}
-	
-	void Update () {
+
+    private void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
+    }
+
+    void Update () {
 		
 	}
 }
