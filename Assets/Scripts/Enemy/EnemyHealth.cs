@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour {
 
@@ -19,11 +20,13 @@ public class EnemyHealth : MonoBehaviour {
     private void Awake() {
         currentHealth = startingHealth;
     }
-
-    void Start () {
-		
-	}
-	
+   
+	public void StartSinking() {
+        GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        isSinking = true;
+        Destroy(gameObject, 2f);
+    }
 	void Update () {
 		
 	}
