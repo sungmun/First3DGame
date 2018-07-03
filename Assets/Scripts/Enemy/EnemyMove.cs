@@ -14,6 +14,8 @@ public class EnemyMove : MonoBehaviour {
     }
 
     void Update () {
-		
+        if (nav.enabled) {
+            nav.SetDestination(player.position);
+        }
 	}
 }
