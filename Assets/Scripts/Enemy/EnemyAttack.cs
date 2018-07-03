@@ -20,6 +20,11 @@ public class EnemyAttack : MonoBehaviour {
         enemyHealth = GetComponent<EnemyHealth>();
     }
 
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject == player) {
+            playerInRange = true;
+        }
+    }
     void Update () {
 		
 	}
