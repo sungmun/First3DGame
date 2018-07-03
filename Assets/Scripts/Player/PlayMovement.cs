@@ -30,18 +30,21 @@ public class PlayMovement : MonoBehaviour {
 
         if (v < 0f) back = -1f;
 
-        avatar.SetFloat("Speed", (h * h + h * v));
+        avatar.SetFloat("Speed", (h * h + v * v));
 
         Rigidbody rigidbody = GetComponent<Rigidbody>();
-        if (rigidbody) {
-            Vector3 speed = rigidbody.velocity;
-            speed.x = 4 * h;
-            speed.y = 4 * v;
 
-            rigidbody.velocity = speed;
-            if (h != 0f && v != 0f) {
-                transform.rotation = Quaternion.LookRotation(new Vector3(h, 0f, v));
-            }
+        if (!rigidbody) {
+            return;
+        }
+
+        Vector3 speed = rigidbody.velocity;
+        speed.x = 4 * h;
+        speed.z = 4 * v;
+        rigidbody.velocity = speed;
+
+        if (h != 0f && v != 0f) {
+            transform.rotation = Quaternion.LookRotation(new Vector3(h, 0f, v));
         }
 
     }

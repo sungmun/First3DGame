@@ -46,11 +46,10 @@ public class TouchPad : MonoBehaviour {
         }
 
         Vector3 diff = touchPad.position - startPos;
-        Vector2 normDiff = new Vector3(diff.x / dragRadius, diff.y / dragRadius);
-        player.OnStickChanged(normDiff);
+        player.OnStickChanged(new Vector3(diff.x / dragRadius, diff.y / dragRadius));
         
     }
-    private void FixedUpdate() {
+    void FixedUpdate() {
         HandleTouchInput();
 #if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
         HandleInput(Input.mousePosition);
@@ -87,7 +86,4 @@ public class TouchPad : MonoBehaviour {
         
     }
 
-    void Update () {
-		
-	}
 }

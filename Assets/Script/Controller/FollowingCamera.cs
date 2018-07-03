@@ -9,7 +9,7 @@ public class FollowingCamera : MonoBehaviour {
 
     public Transform follow;
     
-	void Update () {
+	void LateUpdate () {
         transform.position = follow.position + Vector3.up * distanceUp - Vector3.forward * distanceAway;
 	}
 }
