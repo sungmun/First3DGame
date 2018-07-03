@@ -45,6 +45,19 @@ public class EnemyHealth : MonoBehaviour {
             Death();
         }
     }
+
+    public IEnumerator StartDamage(int damage, Vector3 playerPosition,float delay, float pushBack) {
+        yield return new WaitForSeconds(delay);
+
+        try {
+            TaskDamage(damage);
+            Vector3 diff = playerPosition - transform.position;
+            diff = diff / diff.sqrMagnitude;
+            GetComponent<Rigidbody>().AddForce((transform.position - new Vector3(diff.x, diff.y, 0f)) * 50f * pushBack);
+        } catch (MissingReferenceException e) {
+            Debug.Log(e.ToString());
+        }
+    }
     void Update () {
 		
 	}
