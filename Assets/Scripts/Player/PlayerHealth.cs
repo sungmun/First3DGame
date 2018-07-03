@@ -24,6 +24,20 @@ public class PlayerHealth : MonoBehaviour {
         currentHealth = startingHealth;
     }
 
+    public void TaskDamage(int amount) {
+        currentHealth -= amount;
+
+        healthSlider.value = currentHealth;
+
+        if (currentHealth <= 0 && !isDead) {
+            Death();
+        } else {
+            anim.SetTrigger("Damage");
+        }
+    }
+
+
+
     void Start () {
 		
 	}
