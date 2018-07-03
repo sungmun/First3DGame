@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public int startingHealth = 100;
+    public int currentHealth;
+
+    public float flashSpeed = 5f;
+    public float sinkSpeed = 1f;
+
+    public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
+
+    bool isDead;
+    bool isSinking;
+    bool damaged;
+
+    void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
