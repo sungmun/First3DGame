@@ -36,13 +36,10 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
 
+    void Death() {
+        isDead = true;
+        anim.SetTrigger("Die");
+        playMovement.enabled = false;
+    }
 
-
-    void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
 }
