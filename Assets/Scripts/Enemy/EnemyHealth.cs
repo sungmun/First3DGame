@@ -27,13 +27,25 @@ public class EnemyHealth : MonoBehaviour {
 
         StartSinking();
     }
+
     public void StartSinking() {
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
         Destroy(gameObject, 2f);
     }
-	void Update () {
+
+    public void TaskDamage(int amount) {
+
+        damaged = true;
+
+        currentHealth -= amount;
+
+        if (currentHealth <= 0 && !isDead) {
+            Death();
+        }
+    }
+    void Update () {
 		
 	}
 }
