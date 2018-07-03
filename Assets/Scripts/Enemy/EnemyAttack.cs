@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour {
 
-	// Use this for initialization
+    public float timeBetweenAttacks = 0.5f;
+    public int attackDamage = 10;
+
+    GameObject player;
+    PlayerHealth playerHealth;
+    EnemyHealth enemyHealth;
+
+    bool playerInRange;
+    float timer;
+	
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
