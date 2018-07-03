@@ -21,7 +21,13 @@ public class TouchPad : MonoBehaviour {
     public void ButtonDown() {
         buttonPressed = true;
     }
-	void Update () {
+
+    public void ButtonUp() {
+        buttonPressed = false;
+        HandleInput(startPos);
+    }
+
+    void Update () {
 		
 	}
 }
