@@ -1,15 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public int startingHealth = 100;
+    public int currentHealth;
+    public Slider healthSlider;
+    public Image damageImage;
+    public AudioClip deathClip;
+
+    Animator anim;
+    AudioSource playerAudio;
+    PlayMovement playMovement;
+
+    bool isDead;
+
+    void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
