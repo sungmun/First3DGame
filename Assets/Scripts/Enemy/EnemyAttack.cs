@@ -25,12 +25,17 @@ public class EnemyAttack : MonoBehaviour {
             playerInRange = true;
         }
     }
+
     private void OnTriggerExit(Collider other) {
         if (other.gameObject == player) {
             playerInRange = false;
         }
     }
+
     void Update () {
-		
+        timer += Time.deltaTime;
+        if(timer>=timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0) {
+            Attack();
+        }
 	}
 }
