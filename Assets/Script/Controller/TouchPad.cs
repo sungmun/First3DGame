@@ -50,6 +50,12 @@ public class TouchPad : MonoBehaviour {
         player.OnStickChanged(normDiff);
         
     }
+    private void FixedUpdate() {
+        HandleTouchInput();
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+        HandleInput(Input.mousePosition);
+#endif
+    }
 
     void HandleTouchInput() {
         int i = 0;
