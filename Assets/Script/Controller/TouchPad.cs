@@ -27,6 +27,31 @@ public class TouchPad : MonoBehaviour {
         HandleInput(startPos);
     }
 
+    void HandleInput(Vector3 input) {
+        if (buttonPressed) {
+            Vector3 diffVector = (input - startPos);
+            if (diffVector.sqrMagnitude > dragRadius * dragRadius) {
+                diffVector.Normalize();
+                touchPad.position = startPos + diffVector * dragRadius;
+            } else {
+                touchPad.position = input;
+            }
+
+        } else {
+            touchPad.position = startPos;
+        }
+
+
+        if (player == null) {
+            return;
+        }
+
+        Vector3 diff = touchPad.position - startPos;
+        Vector2 normDiff = new Vector3(diff.x / dragRadius, diff.y / dragRadius);
+        player.OnStickChanged(normDiff);
+        
+    }
+
     void Update () {
 		
 	}
