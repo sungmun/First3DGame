@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class TouchPad : MonoBehaviour {
 
-	// Use this for initialization
+    private int touchId = -1;
+    private bool buttonPressed = false;
+
+    private RectTransform touchpad;
+    private Vector3 startPos = Vector3.zero;
+
+    public float dragRadius = 60f;
+    public PlayMovement player;
+
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
