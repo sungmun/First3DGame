@@ -17,6 +17,13 @@ public class PlayerHealth : MonoBehaviour {
 
     bool isDead;
 
+    private void Awake() {
+        anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        playMovement = GetComponent<PlayMovement>();
+        currentHealth = startingHealth;
+    }
+
     void Start () {
 		
 	}
