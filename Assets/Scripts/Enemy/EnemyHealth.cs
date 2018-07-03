@@ -16,6 +16,10 @@ public class EnemyHealth : MonoBehaviour {
     bool isSinking;
     bool damaged;
 
+    private void Awake() {
+        currentHealth = startingHealth;
+    }
+
     void Start () {
 		
 	}
