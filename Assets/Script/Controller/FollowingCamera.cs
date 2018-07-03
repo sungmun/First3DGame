@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class FollowingCamera : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+    public float distanceAway = 7f;
+    public float distanceUp = 4f;
+
+    public Transform follow;
+    
 	void Update () {
 		
 	}
