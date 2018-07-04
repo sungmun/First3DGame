@@ -39,6 +39,8 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     public void TaskDamage(int amount) {
+        damaged = true;
+
         currentHealth -= amount;
 
         healthSlider.value = currentHealth;
