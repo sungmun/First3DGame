@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour {
     public Transform[] spawnPools;
 
 	void Start () {
-		
+        InvokeRepeating("Spawn", intervalTime, intervalTime);
 	}
 	
 }
