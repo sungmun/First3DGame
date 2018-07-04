@@ -80,6 +80,7 @@ public class PlayMovement : MonoBehaviour {
 
         avatar.SetBool("Skill", true);
         lastSkillTime = Time.time;
+        playerAttack.SkillAttack();
     }
 
     public void OnSkillUp() {
