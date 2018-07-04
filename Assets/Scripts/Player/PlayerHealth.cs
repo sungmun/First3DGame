@@ -28,9 +28,16 @@ public class PlayerHealth : MonoBehaviour {
         playMovement = GetComponent<PlayMovement>();
         currentHealth = startingHealth;
     }
+
     private void Update() {
-        if(damaged)
+        if (damaged) {
+            damageImage.color = flashColor;
+        } else {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        damaged = false;
     }
+
     public void TaskDamage(int amount) {
         currentHealth -= amount;
 
