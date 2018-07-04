@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayMovement : MonoBehaviour {
 
     protected Animator avatar;
+    protected PlayerAttack PlayerAttack;
 
     float lastAttackTime, lastSkillTime, lastDashTime;
     public bool attacking = false;
