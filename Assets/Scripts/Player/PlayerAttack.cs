@@ -11,11 +11,13 @@ public class PlayerAttack : MonoBehaviour {
     public NormalTarget normalTarget;
     public SkillTarget skillTarget;
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    public void NormalAttack() {
+        List<Collider> targetList = new List<Collider>(normalTarget.targetList);
+        foreach(Collider one in targetList) {
+            EnemyHealth enemy = one.GetComponent<EnemyHealth>();
+            if (enemy != null) {
+                StartCoroutine(enemy.StartDamage(NormalDamage, transform.position, 0.5f, 0.5f));
+            }
+        }
+    }
 }
