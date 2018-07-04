@@ -93,11 +93,8 @@ public class PlayMovement : MonoBehaviour {
         }
 
         lastDashTime = Time.time;
-        dashing = true;
         avatar.SetTrigger("Dash");
+        playerAttack.DashAttack();
     }
 
-    public void OnDashUp() {
-        dashing = false;
-    }
 }
