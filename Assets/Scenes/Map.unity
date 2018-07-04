@@ -1654,6 +1654,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69763370a932e7042ad6c21ffa1a9e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetList: []
+--- !u!1 &1543607213 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 143276, guid: fbd485bf4dc8942cabdb19eea2d9a2d1, type: 2}
+  m_PrefabInternal: {fileID: 2131474529}
+--- !u!114 &1543607218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543607213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca08a54b3530ef41ab6d949cece552e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NormalDamage: 10
+  SkillDamage: 30
+  DashDamage: 30
+  normalTarget: {fileID: 1615303589}
+  skillTarget: {fileID: 1503938068}
 --- !u!1 &1615303587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,6 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18555b089f972a54e8b1a0133d935c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetList: []
 --- !u!136 &1615303590
 CapsuleCollider:
   m_ObjectHideFlags: 0
