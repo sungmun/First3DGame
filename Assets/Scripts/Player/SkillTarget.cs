@@ -14,4 +14,7 @@ public class SkillTarget : MonoBehaviour {
         targetList.Add(other);
     }
 
+    private void OnTriggerExit(Collider other) {
+        targetList.Remove(other);
+    }
 }
