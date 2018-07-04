@@ -6,4 +6,7 @@ public class SkillTarget : MonoBehaviour {
 
     public List<Collider> targetList;
 
+    private void Awake() {
+        targetList = new List<Collider>();
+    }
 }
