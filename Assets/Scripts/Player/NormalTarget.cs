@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class NormalTarget : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public List<Collider> targetList;
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
