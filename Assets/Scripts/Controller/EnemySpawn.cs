@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour {
 
-	// Use this for initialization
+    public GameObject enemy;
+    public float intervalTime = 10f;
+    public Transform[] spawnPools;
+
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
