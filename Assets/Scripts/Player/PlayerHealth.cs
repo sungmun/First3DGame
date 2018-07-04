@@ -7,6 +7,9 @@ public class PlayerHealth : MonoBehaviour {
 
     public int startingHealth = 100;
     public int currentHealth;
+
+    public float flashSpeed = 5f;
+
     public Slider healthSlider;
     public Image damageImage;
     public AudioClip deathClip;
@@ -24,7 +27,9 @@ public class PlayerHealth : MonoBehaviour {
         playMovement = GetComponent<PlayMovement>();
         currentHealth = startingHealth;
     }
-   
+    private void Update() {
+        if(damaged)
+    }
     public void TaskDamage(int amount) {
         currentHealth -= amount;
 
