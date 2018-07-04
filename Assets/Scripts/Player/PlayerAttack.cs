@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 
-	// Use this for initialization
+    public int NormalDamage = 10;
+    public int SkillDamage = 30;
+    public int DashDamage = 30;
+
+    public NormalTarget normalTarget;
+    public SkillTarget skillTarget;
+
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
