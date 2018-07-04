@@ -5,8 +5,12 @@ using UnityEngine;
 public class NormalTarget : MonoBehaviour {
 
     public List<Collider> targetList;
-	
-	void Update () {
+
+    private void Awake() {
+        targetList = new List<Collider>();
+    }
+
+    void Update () {
 		
 	}
 }
