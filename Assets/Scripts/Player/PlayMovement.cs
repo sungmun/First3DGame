@@ -67,6 +67,7 @@ public class PlayMovement : MonoBehaviour {
             lastAttackTime = Time.time;
             while (attacking) {
                 avatar.SetTrigger("AttackStart");
+                playerAttack.NormalAttack();
                 yield return new WaitForSeconds(1f);
             }
         }
