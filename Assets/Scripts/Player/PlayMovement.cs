@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayMovement : MonoBehaviour {
 
     protected Animator avatar;
-    protected PlayerAttack PlayerAttack;
+    protected PlayerAttack playerAttack;
 
     float lastAttackTime, lastSkillTime, lastDashTime;
     public bool attacking = false;
@@ -15,6 +15,7 @@ public class PlayMovement : MonoBehaviour {
 
     void Start() {
         avatar = GetComponent<Animator>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     public void OnStickChanged(Vector2 stickPos) {
