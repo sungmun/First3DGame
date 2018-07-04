@@ -9,4 +9,9 @@ public class SkillTarget : MonoBehaviour {
     private void Awake() {
         targetList = new List<Collider>();
     }
+
+    private void OnTriggerEnter(Collider other) {
+        targetList.Add(other);
+    }
+
 }
