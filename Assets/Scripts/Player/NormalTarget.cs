@@ -10,6 +10,10 @@ public class NormalTarget : MonoBehaviour {
         targetList = new List<Collider>();
     }
 
+    private void OnTriggerEnter(Collider other) {
+        targetList.Add(other);
+    }
+
     void Update () {
 		
 	}
