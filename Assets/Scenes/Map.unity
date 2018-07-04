@@ -1811,6 +1811,24 @@ MonoBehaviour:
   DashDamage: 30
   normalTarget: {fileID: 1615303589}
   skillTarget: {fileID: 1503938068}
+--- !u!114 &1543607219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543607213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40310db6ecebfd34b9e4cf68132cc06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  flashSpeed: 5
+  flashColor: {r: 1, g: 0, b: 0, a: 0.1}
+  healthSlider: {fileID: 709431725}
+  damageImage: {fileID: 1794473357}
+  deathClip: {fileID: 0}
 --- !u!1 &1615303587
 GameObject:
   m_ObjectHideFlags: 0
