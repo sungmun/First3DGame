@@ -30,4 +30,14 @@ public class PlayerAttack : MonoBehaviour {
             }
         }
     }
+
+    public void SkillAttack() {
+        List<Collider> targetList = new List<Collider>(skillTarget.targetList);
+        foreach (Collider one in targetList) {
+            EnemyHealth enemy = one.GetComponent<EnemyHealth>();
+            if (enemy != null) {
+                StartCoroutine(enemy.StartDamage(DashDamage, transform.position, 1f, 2f));
+            }
+        }
+    }
 }
