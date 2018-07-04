@@ -14,7 +14,7 @@ public class NormalTarget : MonoBehaviour {
         targetList.Add(other);
     }
 
-    void Update () {
-		
-	}
+    private void OnTriggerExit(Collider other) {
+        targetList.Remove(other);
+    }
 }
