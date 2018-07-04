@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour {
     PlayMovement playMovement;
 
     bool isDead;
+    bool damaged;
 
     private void Awake() {
         anim = GetComponent<Animator>();
@@ -23,7 +24,7 @@ public class PlayerHealth : MonoBehaviour {
         playMovement = GetComponent<PlayMovement>();
         currentHealth = startingHealth;
     }
-
+   
     public void TaskDamage(int amount) {
         currentHealth -= amount;
 
