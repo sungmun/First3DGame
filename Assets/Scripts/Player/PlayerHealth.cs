@@ -26,13 +26,14 @@ public class PlayerHealth : MonoBehaviour {
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playMovement = GetComponent<PlayMovement>();
+        // 위의 GetComponent는 현재 스크립트를 추가한 객체에 포함되있는 요소를 불러오는 효과가 있다
 
         currentHealth = startingHealth;
     }
 
     private void Update() {
         damageImage.color= (damaged)? flashColor: Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-       
+        
         damaged = false;
     }
 
