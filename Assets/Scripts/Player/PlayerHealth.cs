@@ -33,8 +33,13 @@ public class PlayerHealth : MonoBehaviour {
 
     private void Update() {
         damageImage.color= (damaged)? flashColor: Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        //데미지를 입은 즉시 빨간 화면으로 전환
+        //그후 빨간 화면에서 서서히 투명한 이미지로 전환
+        //Color.Lerp메소드를 통해 색이 서서히 변경이 가능하다.
+        //Color.Lerp메소드는 두개의 색을 섞어주는 역활을 하며, 3번째 인자값으로 두개의 값중 어떤색쪽으로 더 치중해서 색을 표현할지를 정한다.
+        //또한 인자값은 0 ~ 1 사이에 있어야 한다.
+        damaged = false; 
         
-        damaged = false;
     }
 
     public void TaskDamage(int amount) {
