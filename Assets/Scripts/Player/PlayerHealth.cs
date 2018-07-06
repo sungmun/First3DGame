@@ -60,8 +60,8 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     void Death() {
-        isDead = true;                  
-        anim.SetTrigger("Die");         
+        isDead = true;                  //죽은 사실 인정
+        anim.SetTrigger("Die");         //애니메이션에 죽음 트리거 전달
         playMovement.enabled = false;
     }
 
