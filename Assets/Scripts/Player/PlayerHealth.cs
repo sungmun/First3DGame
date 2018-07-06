@@ -41,24 +41,27 @@ public class PlayerHealth : MonoBehaviour {
         damaged = false; 
         
     }
-
+    /*
+     * 데미지를 입을 경우 호출이 되는 메소드이다
+     */
     public void TaskDamage(int amount) {
-        damaged = true;
 
-        currentHealth -= amount;
+        damaged = true;     //데미지를 입었다는 사실을 Update에 알려주기 위한 부분
 
-        healthSlider.value = currentHealth;
+        currentHealth -= amount;    //입은 데미지를 현재 체력에서 빼주는 부분
 
-        if (currentHealth <= 0 && !isDead) {
-            Death();
+        healthSlider.value = currentHealth; //현재 체력을 Silber에 반영해줌
+
+        if (currentHealth <= 0 && !isDead) {        //현재 체력이 0보다 작거나 같으면서 죽은 상태가 아니일때,
+            Death();                                //Death 메소드 실행
         } else {
-            anim.SetTrigger("Damage");
+            anim.SetTrigger("Damage");              //위의 경우가 아니인경우 애니메이션에 데미지 트리거를 전달
         }
     }
 
     void Death() {
-        isDead = true;
-        anim.SetTrigger("Die");
+        isDead = true;                  
+        anim.SetTrigger("Die");         
         playMovement.enabled = false;
     }
 
