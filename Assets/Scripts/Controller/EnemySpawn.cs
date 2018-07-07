@@ -10,6 +10,7 @@ public class EnemySpawn : MonoBehaviour {
 
 	void Start () {
         InvokeRepeating("Spawn", intervalTime, intervalTime);
+        //2번째 인자값 초에 Spawn메소드를 호출하고 3번째 인자값 초마다 Spawn메소드를 호출한다
 	}
 	
     void Spawn() {
