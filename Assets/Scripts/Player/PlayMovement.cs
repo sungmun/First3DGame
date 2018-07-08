@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayMovement : MonoBehaviour {
 
-    protected Animator avatar;
-    protected PlayerAttack playerAttack;
+    protected Animator avatar;              //PlayerAnimator 추가
+    protected PlayerAttack playerAttack;    //PlayerAttack C# 스크립트 추가
 
-    float lastAttackTime, lastSkillTime, lastDashTime;
+    float lastAttackTime, lastSkillTime, lastDashTime;  //
     public bool attacking = false;
     public bool dashing = false;
 
